@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--    控制器类所在的包-->
+    <context:component-scan base-package="com"/>
+<!--    中文乱码-->
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/html;charset=UTF-8</value>
+                        <value>application/json;charset=UTF-8</value>
+                        <value>text/plain;charset=UTF-8</value>
+                        <value>application/xml;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--    /WEB-INF/page/意为页面的路径，.jsp为页面格式-->
+        <property name="prefix" value="/WEB-INF/page/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+<!--    释放静态资源-->
+    <mvc:default-servlet-handler/>
+    <!-- 释放/WEB-INF/images/下的静态资源 用/images映射的都释放 -->
+    <mvc:resources location="/WEB-INF/images/" mapping="/images/**" />
+
+
+
+</beans>
