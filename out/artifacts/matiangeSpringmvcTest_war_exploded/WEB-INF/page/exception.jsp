@@ -12,7 +12,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <div id="result" style="background-color: yellow;height: 200px">
+    <div id="result" style="background-color: yellow;height: 100%">
        <%-- <img src="<%=request.getContextPath()%>/images/kaikeba.png">--%>
         <img src="/images/kaikeba.png" style="height: 60px">
            <h1  align="center">${msgTitle}:${message}</h1>
@@ -20,7 +20,9 @@
             <input id="buttonCn" class="button2" type="button" onclick="test('CN')" value="中文" />
             <input id="buttonUs" class="button2" type="button" onclick="test('US')" value="英文" />
             <input id="buttonReset" class="button2" type="button" onclick="test('')" value="重置" />
+            <input id="buttonUpload" class="button2" type="button" onclick="window.location.href='uploadJsp'" value="返回" />
         </div>
+        <div class="divCoustom" style="background-color: white;height: 50%"></div>
     </div>
 </head>
 <body>
@@ -113,5 +115,8 @@
         display: inline-block;
         margin-left:20px;
         background-size:100% 100%;
+    }
+    .divCoustom {
+        margin: 40px 40px 30px 40px
     }
 </style>

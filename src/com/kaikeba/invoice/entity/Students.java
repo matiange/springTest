@@ -10,6 +10,33 @@ public class Students {
     private String num;
     private String name;
     private Double sum;
+    private String sexy;
+    private String mobilePhoneNum;
+    private String bankNum;
+
+    public String getBankNum() {
+        return bankNum;
+    }
+
+    public void setBankNum(String bankNum) {
+        this.bankNum = bankNum;
+    }
+
+    public String getMobilePhoneNum() {
+        return mobilePhoneNum;
+    }
+
+    public void setMobilePhoneNum(String mobilePhoneNum) {
+        this.mobilePhoneNum = mobilePhoneNum;
+    }
+
+    public String getSexy() {
+        return sexy;
+    }
+
+    public void setSexy(String sexy) {
+        this.sexy = sexy;
+    }
 
     public String getNum() {
         return num;

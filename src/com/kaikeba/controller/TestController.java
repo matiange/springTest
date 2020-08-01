@@ -33,7 +33,7 @@ public class TestController {
             }
             mv = new ModelAndView();
             if(StringUtils.isNotEmpty(bundle)){
-                throw new CheckedException("120",bundle);
+                throw new CheckedException("file_null",bundle);
             }
             mv.addObject("index","Hello-World");
             mv.addObject("message","信息正常");
