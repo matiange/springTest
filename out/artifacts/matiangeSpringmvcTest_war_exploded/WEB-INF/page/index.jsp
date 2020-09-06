@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.kaikeba.invoice.entity.Students" %>
 <style type="text/css" src="../static/public"></style>
@@ -15,7 +16,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Hello-World</title>
-
+    <link rel="stylesheet" type="text/css" href="../static/public.css"/>
 </head>
 <body>
 <div id="indexResult" style="background-color: yellow;height: 100%">
@@ -29,7 +30,8 @@
         <%--<a class="buttonIndex" href="download">下载</a>--%>
         <%--<input id="buttonUs" class="buttonIndex" type="button" href="download" value="下载" />--%>
 
-        <input id="buttonReset"  class="buttonIndex" type="button" onclick="window.location.href='uploadJsp'" value="上传" />
+        <input id="buttonReset"  class="buttonIndex" type="button" onclick="window.location.href='invoice/uploadJsp'" value="上传" />
+<%--        <input id="buttonBack"  class="buttonIndex" type="button" name="Submit" οnclick="javascript:history.back(-1);" value="返回">--%>
         <%--<div class="buttonIndex">
             <form action="/invoice/download"
                   method="get">
@@ -41,17 +43,28 @@
 
     <div style="height: 10px"></div>
     <div class="c1">
-        <table border="2" align="center">
+        <table border="2" align="center" width="100%">
             <tr>
                 <th style="width: 100px">学员学号</th>
                 <th style="width: 100px">学员姓名</th>
-                <th style="width: 100px">性别</th>
+                <th style="width: 50px">性别</th>
                 <th style="width: 100px">可申请总额</th>
                 <th style="width: 100px">银行卡号</th>
                 <th style="width: 100px">手机号</th>
             </tr>
 
-            <%
+            <c:forEach items="${lists}" var="item">
+                <tr>
+                    <td align="center">${item.num}</td>
+                    <td align="center">${item.name}</td>
+                    <td align="center">${item.sexy}</td>
+                    <td align="center">${item.sum}</td>
+                    <td align="center">${item.bankNum}</td>
+                    <td align="center">${item.mobilePhoneNum}</td>
+                </tr>
+
+            </c:forEach>
+            <%--<%
                 ArrayList list = (ArrayList)request.getAttribute("lists");
         /*if(list!=null && list.size()!=5){
             int u = 5-list.size();
@@ -62,17 +75,10 @@
                 for(int i = 0; i < list.size(); i++){
                     Students  clazz = (Students)list.get(i);
             %>
-            <tr>
-                <td align="center"><%=clazz.getNum()%></td>
-                <td align="center"><%=clazz.getName()%></td>
-                <td align="center"><%=clazz.getSexy()%></td>
-                <td align="center"><%=clazz.getSum()%></td>
-                <td align="center"><%=clazz.getBankNum()%></td>
-                <td align="center"><%=clazz.getMobilePhoneNum()%></td>
-            </tr>
+
             <%
                 }
-            %>
+            %>--%>
         </table>
 
     </div>

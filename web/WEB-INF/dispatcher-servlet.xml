@@ -35,6 +35,8 @@
     <mvc:default-servlet-handler/>
     <!-- 释放/WEB-INF/images/下的静态资源 用/images映射的都释放 -->
     <mvc:resources location="/WEB-INF/images/" mapping="/images/**" />
+    <mvc:resources location="/WEB-INF/static/" mapping="/static/**" />
+    <mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
 
 
 
@@ -51,5 +53,6 @@
             </property>
     </bean>
 
-
+<!--    全局异常处理器-->
+    <bean class="com.kaikeba.exception.ApplicationExceptionResolver"></bean>
 </beans>

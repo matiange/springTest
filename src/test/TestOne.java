@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Vector;
+import java.util.regex.Pattern;
 
 /**
  * @author MaTianGe
@@ -23,9 +24,13 @@ public class TestOne {
         System.out.println(ab.hashCode());*/
         /*A ab = new B();//12AB
         ab = new B();//ab*/
-        int oldCapacity = 20;
-        System.out.println(oldCapacity + (oldCapacity >> 1));//1.5
+//        int oldCapacity = 20;
+//        System.out.println(oldCapacity + (oldCapacity >> 1));//1.5
 
         //Collections.synchronizedCollection(new ArrayList<>());
+
+        String pattern =".*login.*";//正则表达式
+        boolean matches = Pattern.matches(pattern, "xLogin.action");
+        System.out.println(matches);
     }
 }

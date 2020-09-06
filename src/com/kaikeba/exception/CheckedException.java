@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
  */
 public class CheckedException extends RuntimeException{
     private String code;
-    private String bundle;
+    private String bundle="CN";
 
     public CheckedException() {
         super();
@@ -25,6 +25,11 @@ public class CheckedException extends RuntimeException{
         super(code);
         this.code = code;
         this.bundle = bundle;
+    }
+
+    public CheckedException(String code) {
+        super(code);
+        this.code = code;
     }
 
     public CheckedException(String message, Throwable cause) {

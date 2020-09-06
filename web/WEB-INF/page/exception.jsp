@@ -21,6 +21,7 @@
             <input id="buttonUs" class="button2" type="button" onclick="test('US')" value="英文" />
             <input id="buttonReset" class="button2" type="button" onclick="test('')" value="重置" />
             <input id="buttonUpload" class="button2" type="button" onclick="window.location.href='uploadJsp'" value="返回" />
+            <input id="login" class="button2" type="button" onclick="window.location.href='/'" value="首页" />
         </div>
         <div class="divCoustom" style="background-color: white;height: 50%"></div>
     </div>
