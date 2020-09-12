@@ -16,7 +16,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Pattern;
 
 /**
@@ -45,10 +44,10 @@ public class LoginFilter implements Filter {
         HttpSession session = request.getSession();
 
         String url = request.getRequestURI();
-        String servletPath = request.getServletPath();
-        String contextPath = request.getContextPath();
-        String pathInfo = request.getPathInfo();
-        StringBuffer requestURL = request.getRequestURL();
+//        String servletPath = request.getServletPath();
+//        String contextPath = request.getContextPath();
+//        String pathInfo = request.getPathInfo();
+//        StringBuffer requestURL = request.getRequestURL();
 
 
         //如果路径包含一下直接释放
@@ -131,6 +130,7 @@ public class LoginFilter implements Filter {
         List<String> whiteList = new ArrayList<>();
         whiteList.add(".*login.*");
         whiteList.add(".*doLogin.*");
+        whiteList.add(".*.js");
         whiteList.add(".*/static/.*");
         whiteList.add(".*/images/.*");
         return whiteList;
