@@ -16,7 +16,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Hello-World</title>
-    <link rel="stylesheet" type="text/css" href="../static/public.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/public.css"/>
 </head>
 <body>
 <div id="indexResult" style="background-color: yellow;height: 100%">

@@ -1,7 +1,7 @@
 package com.kaikeba.exception;
 
 import com.kaikeba.exception.entity.MessageEnum;
-import org.apache.commons.lang.xwork.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author MaTianGe
