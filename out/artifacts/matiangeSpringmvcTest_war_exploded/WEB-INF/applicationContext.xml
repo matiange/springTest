@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:websocket="http://www.springframework.org/schema/websocket"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<!--    <import resource="spring/spring-websocket.xml" />-->
 
+<!--&lt;!&ndash;     websocket处理类 &ndash;&gt;-->
+<!--    <bean id="myWebSocketHander" class="com.kaikeba.wsocket.springws.MyWebSocketHander"/>-->
+
+<!--    &lt;!&ndash; 握手接口/拦截器 &ndash;&gt;-->
+<!--    <bean id="handshakeInterceptor" class="com.kaikeba.wsocket.springws.HandshakeInterceptor"/>-->
+
+<!--    <websocket:handlers >-->
+<!--        <websocket:mapping path="/spring-websocket" handler="myWebSocketHander"/>-->
+<!--        <websocket:handshake-interceptors>-->
+<!--            <ref bean="handshakeInterceptor"/>-->
+<!--        </websocket:handshake-interceptors>-->
+<!--    </websocket:handlers>-->
+
+<!--    &lt;!&ndash;  注册 sockJS &ndash;&gt;-->
+<!--    <websocket:handlers>-->
+<!--        <websocket:mapping path="/sockjs/spring-websocket" handler="myWebSocketHander"/>-->
+<!--        <websocket:handshake-interceptors>-->
+<!--            <ref bean="handshakeInterceptor"/>-->
+<!--        </websocket:handshake-interceptors>-->
+<!--        <websocket:sockjs />-->
+<!--    </websocket:handlers>-->
 </beans>
