@@ -1,9 +1,8 @@
 package com.kaikeba.exception;
 
-import org.apache.commons.lang.xwork.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.NoSuchMessageException;
 
-import javax.servlet.http.HttpSession;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
