@@ -10,7 +10,7 @@
        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--    控制器类所在的包-->
-    <context:component-scan base-package="com"/>
+
 <!--    中文乱码-->
     <mvc:annotation-driven>
         <mvc:message-converters register-defaults="true">
@@ -30,28 +30,30 @@
         <!--    /WEB-INF/page/意为页面的路径，.jsp为页面格式-->
         <property name="prefix" value="/WEB-INF/page/"/>
         <property name="suffix" value=".jsp"/>
+        <property name="order" value="1" />
     </bean>
-<!--    释放静态资源-->
+
+    <!--    释放静态资源-->
     <mvc:default-servlet-handler/>
     <!-- 释放/WEB-INF/images/下的静态资源 用/images映射的都释放 -->
     <mvc:resources location="/WEB-INF/images/" mapping="/images/**" />
     <mvc:resources location="/WEB-INF/static/" mapping="/static/**" />
     <mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
-
+    <context:component-scan base-package="com.*"/>
 
 
     <!-- 由于SpringMVC上下文中默认没有装配 MultipartResolver，因此默认情况下它不能处理文件上传工作。
    如果想使用spring的文件上传功能，则需要在上下文中配置MultipartResolver-->
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-            <!-- 上传文件大小上限，单位为字节（10MB） -->
+<!--    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+            &lt;!&ndash; 上传文件大小上限，单位为字节（10MB） &ndash;&gt;
             <property name="maxUploadSize">
                 <value>10485760</value>
             </property>
-            <!-- 请求的编码格式，必须和jsp的pageEncoding属性一致，以便正确读取表单的内容，默认为ISO-8859-1 -->
+            &lt;!&ndash; 请求的编码格式，必须和jsp的pageEncoding属性一致，以便正确读取表单的内容，默认为ISO-8859-1 &ndash;&gt;
             <property name="defaultEncoding">
                 <value>UTF-8</value>
             </property>
-    </bean>
+    </bean>-->
 
 <!--    全局异常处理器-->
     <bean class="com.kaikeba.exception.ApplicationExceptionResolver"></bean>
