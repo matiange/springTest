@@ -1,17 +1,12 @@
 package com.kaikeba.controller;
 
-import com.kaikeba.exception.ApplicationException;
 import com.kaikeba.exception.CheckedException;
-import com.opensymphony.xwork2.util.logging.LoggerFactory;
-import org.apache.commons.lang.xwork.StringUtils;
-import org.slf4j.Logger;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
 import java.util.Map;
 
 /**
